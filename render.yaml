@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: phantom-mesh
+    env: python
+    buildCommand: ""
+    startCommand: python -m phantom_mesh.cli tarpit --host 0.0.0.0 --port $PORT
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: PHANTOM_ADMIN_NAME
+        value: Subrat Sahu
+      - key: PHANTOM_ADMIN_EMAIL
+        value: subratsahu195@gmail.com
+      - key: PHANTOM_ADMIN_KEY
+        generateValue: true

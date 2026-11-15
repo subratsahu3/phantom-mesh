@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  phantom-mesh:
+    build: .
+    container_name: phantom-mesh-soc
+    restart: unless-stopped
+    ports:
+      - "8888:8888"
+    environment:
+      - PORT=8888
+      - PHANTOM_ADMIN_NAME=Subrat Sahu
+      - PHANTOM_ADMIN_EMAIL=subratsahu195@gmail.com
+      - PHANTOM_ADMIN_KEY=PhantomAdmin-2026-SubratSahu
+    volumes:
+      - phantom_logs:/app/logs
+
+volumes:
+  phantom_logs:
